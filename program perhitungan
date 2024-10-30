@@ -1,0 +1,40 @@
+def hitung_impuls(F,dt):
+    I = F * dt
+    return I
+
+def hitung_gaya(I,dt):
+    F = I / dt
+    return F
+
+def hitung_selang_waktu(I,F):
+    dt = I / F 
+    return dt
+
+def main():
+    print("program menghitumg impuls")
+    print("1: hitung impuls (I)")
+    print("2: hitung gaya (F)")
+    print("3: hitung selang waktu (dt)")
+
+    pilihan=input("masukkan pilihan 1/2/3:")
+
+    if pilihan =="1":
+        F = float(input("masukkan nilai gaya dalam N:"))
+        dt = float(input("masukkan nilai selang waktu dalam s:"))
+        I = hitung_impuls(F,dt)
+        print(f"impuls sebesar : {I: 2f} Ns")
+
+    elif pilihan =="2":
+        I = float(input("masukkan nilai impuls dalam Ns:"))
+        dt = float(input("masukan nilai selang waktu dalam s:"))
+        F = hitung_gaya(I,dt)
+        print(f"gaya sebesar : {F: 2f} N")
+
+    elif pilihan =="3":
+        I = float(input("masukkan nilai impuls dalam Ns:"))
+        F = float(input("masukan nilai gaya dalam N:"))
+        dt = hitung_selang_waktu(I,F)
+        print(f"selang waktu sebesar : {dt: 2f} s")
+
+if __name__ == "__main__":
+    main()
