@@ -1,0 +1,80 @@
+# soal no.1 
+import matplotlib.pyplot as plt
+import numpy as np
+
+k = 60 #N/m
+
+x = np.arange(0, 0.5, 0.02)
+
+def f(x):
+    return k*x
+
+y = f(x)
+
+plt.plot(x, y, marker='o', color='b', linestyle='-', label="F=-k.x")
+plt.xlabel("regangan (m)")
+plt.ylabel("gaya (F)")
+plt.title("1. GRAFIK GAYA PEGAS")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# soal no.2
+import matplotlib.pyplot as plt
+import numpy as np
+
+t= np.linspace(0, 50, 100)
+A= 5 #cm
+T= 10 #s
+
+x= A*np.cos(2*np.pi*T*t)
+
+plt.plot(t, x, marker='v', color='r', linestyle='-', label="x=2*cos(2*pi*10*t)")
+plt.xlabel("posisi")
+plt.ylabel("waktu (s)")
+plt.title("2. GHS")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# soal no.3
+import matplotlib.pyplot as plt
+import numpy as np
+
+v0= 50 #m/s
+g= 9.8 #m/s**2
+
+t_max = v0 / g
+
+# Rentang waktu dari 0 hingga t_max
+t = np.linspace(0, t_max, 10)
+
+# Persamaan tinggi y terhadap waktu t
+y = v0 * t - 0.5 * g * t**2
+
+plt.plot(t, y, label="Gerak Parabola", color="b", marker="v")
+plt.title("3. Grafik Gerak Benda")
+plt.xlabel("Waktu (s)")
+plt.ylabel("Tinggi (m)")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+#soal no.4
+import matplotlib.pyplot as plt
+import numpy as  np
+
+def f(x):
+    return 2*x**2 + 4*x + 2
+
+x = np.linspace(0, 30, 10)
+
+y= f(x)
+
+plt.plot(x, y, marker="o", color="g",  label="F(x) = 2x² + 4x + 2")
+plt.title("4. Grafik Gaya Tak Konstan")
+plt.xlabel("Jarak (m)")
+plt.ylabel("Gaya (N)")
+plt.grid(True)
+plt.legend()
+plt.show()
